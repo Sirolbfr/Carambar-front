@@ -1,0 +1,16 @@
+body {
+
+    & h1 {
+        text-align: center;
+    }
+
+    & main {
+        display: flex;
+        justify-content: center;
+
+        & #section1 {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

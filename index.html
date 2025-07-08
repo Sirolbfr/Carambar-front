@@ -10,18 +10,26 @@
   <body>
     <header><h1>Blagues Carambar</h1></header>
     <main>
-      <section>
-        <h2>Ajouter une blague à la base de données</h2>
-        <input type="text" name="postContent" id="postContent">
-        <button type="submit">Ajouter</button>
+      <section id="section1">
+        <section>
+          <h2>Ajouter une blague à la base de données</h2>
+          <input type="text" name="postContent" id="postContent">
+          <button type="submit">Ajouter</button>
+        </section>
+        <section>
+          <h2>Supprimer une blague</h2>
+          <input type="number" name="deletedID" id="deletedID">
+        </section>
       </section>
-      <section>
+      <section id="section2">
         <h2>Afficher des blagues</h2>
         <select name="getSelect" id="getSelect">
           <option value="all">Toutes les blagues</option>
           <option value="random">Blague aléatoire</option>
-          <option value="byId">Blague précise</option>
+          <option value="id">Blague précise</option>
         </select>
+        <button id="display_btn">Afficher</button>
+        <p id="cont"></p>
       </section>
     </main>
   </body>
