@@ -3,6 +3,11 @@ const URL = "https://carambar-back-akss.onrender.com"
 const cont = document.querySelector('#cont')
 const select = document.querySelector('select')
 const display_btn = document.querySelector('#display_btn')
+const postBtn = document.querySelector('#postBtn')
+const deleteBtn = document.querySelector('#deleteBtn')
+const postSection = document.querySelector('#postSection')
+const IdInput = document.querySelector('#IdInput')
+const displaySection = document.querySelector('#section2')
 
 
 /*--------- Class ---------*/
@@ -62,13 +67,13 @@ async function fetchRandom() {
   return response.json();
 }
 
-async function postNew() {
+async function postNew(reqBody) {
   const response = await fetch(URL+"/blagues", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ question: "test question", reponse: "test reponse" })
+    body: JSON.stringify(reqBody)
   });
   return response.json();
 }
@@ -98,11 +103,17 @@ function displayData(button, id=null) {
   } else {console.log("button type not found")}
 }
 
-function displayIdInput() {
-
+function displayIdInput(button) {
+  if (button === "id") {
+    const IdInput = document.createElement("input")
+    IdInput.id = "IdInput"
+    displaySection.appendChild(IdInput)
+  }
 }
 
-display_btn.addEventListener("click", () => displayData(select.value))
+display_btn.addEventListener("click", () => displayData(select.value, IdInput?.value || null))
+select.addEventListener("change", () => displayIdInput(select.value))
+postBtn.addEventListener("click", () => postNew())
 
 
 /*--------- Init ---------*/

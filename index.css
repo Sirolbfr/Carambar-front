@@ -1,4 +1,5 @@
 body {
+    font-family: sans-serif;
 
     & h1 {
         text-align: center;
@@ -7,10 +8,21 @@ body {
     & main {
         display: flex;
         justify-content: center;
+        gap: 10%;
 
         & #section1 {
             display: flex;
             flex-direction: column;
+            gap: 5%;
+            background-color: #f73939;
+            padding: 1%;
+            border-radius: 15px;
+        }
+
+        & #section2 {
+            background-color: hsl(54, 98%, 50%);
+            padding: 1%;
+            border-radius: 15px;
         }
     }
 }

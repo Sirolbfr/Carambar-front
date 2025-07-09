@@ -11,14 +11,17 @@
     <header><h1>Blagues Carambar</h1></header>
     <main>
       <section id="section1">
-        <section>
+        <section id="postSection">
           <h2>Ajouter une blague à la base de données</h2>
+          <label for="postContent">Format {question: test, reponse: test}</label>
           <input type="text" name="postContent" id="postContent">
-          <button type="submit">Ajouter</button>
+          <button id="postBtn">Ajouter</button>
         </section>
-        <section>
+        <section id="deleteSection">
           <h2>Supprimer une blague</h2>
+          <label for="deletedID">Id de la blague à supprimer : </label>
           <input type="number" name="deletedID" id="deletedID">
+          <button id="deleteBtn">Supprimer</button>
         </section>
       </section>
       <section id="section2">
